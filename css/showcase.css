@@ -1,12 +1,11 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: grey;
 }
+ body {
+   background: grey;
+ }
 
-.header {
-  //Header Styles here
-}
 
 .container {
   max-width: 940px;
@@ -14,9 +13,18 @@ html, body {
   padding: 0 10px;
 }
 
-.jumbotron {
+/*Styles for the slick slider*/
+.sliderHero {
   height: 800px;
-  background: url("http://lorempixel.com/output/nightlife-q-c-1920-480-1.jpg") no-repeat fixed;
+}
+
+.sliderImages {
+  list-style: none;
+  padding: 0;
+}
+
+.sliderImages .li .img {
+  width: 100%;
 }
 
 .nav {

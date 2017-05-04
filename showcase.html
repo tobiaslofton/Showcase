@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400, 600' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400, 600' rel='stylesheet' type='text/css'>
   <link rel='stylesheet' href='css/showcase.css'/>
+  <link rel='stylesheet' href='css/normalize.css'/>
+  <link rel='stylesheet' href='slick-1.6.0\slick\slick.css'/>
+
+  <title>Tobias Lofton</title>
   </head>
   <body>
 
@@ -12,9 +16,15 @@
       </div>
     </div>
 
-    <div class="jumbotron">
+    <div class="sliderHero">
+        <ol class = 'sliderImages'>
+          <li><img src="images\praticeHero.jpg"/></li>
+          <li><img src="images\practiceHero1.jpg"/></li>
+          <li><img src="images\practiceHero2.jpg"/></li>
+        </ol>
       <div class="container">
         <div class="main">
+          <!--Wanna make this a list that will animate over the slick slider -->
           <h1><em>Code Forever</em> or How I learned to stop <strong>worrying</strong> and love the code.</h1>
         </div>
       </div>
@@ -49,6 +59,8 @@
         <p>&copy; Broadway 2015</p>
       </div>
     </div>
-    <script src = "js/showcase.js"/>
+    <script type='text/javascript' src='js\jquery-3.2.1.slim.min.js'></script>
+    <script type="text/javascript" src='slick-1.6.0\slick\slick.min.js'></script>
+    <script src = "js\showcase.js"/></script>
   </body>
 </html>
