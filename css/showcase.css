@@ -21,6 +21,7 @@ html, body {
 .sliderImages {
   list-style: none;
   padding: 0;
+  margin-top: 0;
 }
 
 .sliderImages .li .img {
