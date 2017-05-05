@@ -1,5 +1,9 @@
 function main() {
 
+
+
+
+
   $('.sliderImages').slick({
     /*slidesToShow: 1,*/
     /*slidesToScroll: 1,*/
