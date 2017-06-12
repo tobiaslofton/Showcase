@@ -20,12 +20,12 @@ gulp.task('log', function(){
 
 //The sass takes our scss file 'pipes' it into regular css. If there is an error it sends the error to the command line otherwise it will put the resulting css file into the assets folder : sass
 gulp.task('sass', function(){
-  gulp.src('scss/showcase.scss').pipe(sass({style: 'expanded'})).on('error', gutil.log).pipe(gulp.dest('assets'));
+  gulp.src('scss/showcase.scss').pipe(sass({style: 'expanded'})).on('error', gutil.log).pipe(gulp.dest('assets')).pipe(connect.reload());
 });
 
 //The js task takes out javascript and makes it not readable to humans but faster for computers : js
 gulp.task('js', function(){
-  gulp.src('js/showcase.js').pipe(uglify()).pipe(gulp.dest('assets'));
+  gulp.src('js/showcase.js').pipe(uglify()).pipe(gulp.dest('assets')).pipe(connect.reload());
 });
 
 
@@ -34,6 +34,7 @@ gulp.task('watch', function(){
   gulp.watch('showcase.html', ['copy']);
   gulp.watch('scss/showcase.scss', ['sass']);
   gulp.watch('js/showcase.js', ['js']);
+  gulp.watch('assets/showcase.html', ['html']);
 });
 
 
@@ -43,4 +44,9 @@ gulp.task('connect', function(){
     root: '.',
     livereload: true
   });
+});
+
+//The html task is here so whenever there is a change in the html the file will refresh this is call above in the 'watch' task.
+gulp.task('html', function(){
+  gulp.src('assets/showcase.html').pipe(connect.reload());
 });
