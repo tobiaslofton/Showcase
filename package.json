@@ -1,0 +1,15 @@
+{
+  "name": "showcase",
+  "version": "1.0.0",
+  "description": "A Portfolio site for myself",
+  "Author": "Tobias Lofton <tobias@tobiaslofton.com>",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-util": "latest",
+    "gulp-sass": "latest",
+    "gulp-coffee": "latest",
+    "gulp-uglify": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest"
+  }
+}
