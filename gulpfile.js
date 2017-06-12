@@ -7,5 +7,9 @@ gulp.task('copy', function(){
 });
 
 gulp.task('log', function(){
-  gutil.log('My Log Task'); 
+  gutil.log('My Log Task');
+});
+
+gulp.task('sass', function(){
+  gulp.src('scss/showcase.scss').pipe(sass({style: 'expanded'})).on('error', gutil.log).pipe(gulp.dest('assets'));
 });
