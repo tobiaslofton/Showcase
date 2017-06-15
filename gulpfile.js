@@ -8,14 +8,15 @@ var connect = require('gulp-connect');
 
 // Tasks are functions that carry out methods that can then be called on the command line
 
-//The copy task takes the html file and puts it into the assets folder : copy
-gulp.task('copy', function(){
-  gulp.src('showcase.html').pipe(gulp.dest('assets'));
-});
 
 //The log task functions to return an error should there be one : log
 gulp.task('log', function(){
   gutil.log('My Log Task');
+});
+
+//The copy task takes the html file and puts it into the assets folder : copy
+gulp.task('copy', function(){
+  gulp.src('showcase.html').pipe(gulp.dest('assets'));
 });
 
 //The sass takes our scss file 'pipes' it into regular css. If there is an error it sends the error to the command line otherwise it will put the resulting css file into the assets folder : sass
@@ -34,7 +35,7 @@ gulp.task('watch', function(){
   gulp.watch('showcase.html', ['copy']);
   gulp.watch('scss/showcase.scss', ['sass']);
   gulp.watch('js/showcase.js', ['js']);
-  gulp.watch('assets/showcase.html', ['html']);
+  gulp.watch('showcase.html', ['html']);
 });
 
 
@@ -46,7 +47,9 @@ gulp.task('connect', function(){
   });
 });
 
-//The html task is here so whenever there is a change in the html the file will refresh this is call above in the 'watch' task.
+//The html task is here so whenever there is a change in the html the file will refresh. This is called above in the 'watch' task.
 gulp.task('html', function(){
   gulp.src('assets/showcase.html').pipe(connect.reload());
 });
+
+gulp.task('default', ['html', 'js', 'sass', 'connect', 'watch']);
